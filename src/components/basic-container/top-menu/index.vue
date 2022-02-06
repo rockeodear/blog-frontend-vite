@@ -29,7 +29,9 @@ import router from 'router'
 
 const _this = getCurrentInstance().proxy
 
-const avatarUrl = ref('https://www.whywhy.vip/upload/2021/09/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210917230812-25c6b5b9c4184a91ba64d1c2a783f553.jpg')
+const avatarUrl = ref(
+  'https://www.whywhy.vip/upload/2021/09/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210917230812-25c6b5b9c4184a91ba64d1c2a783f553.jpg'
+)
 
 const activeBar = ref('/index')
 
@@ -85,6 +87,7 @@ const toPage = path => {
   margin: 10px 20px 0 20px;
   padding-bottom: 10px;
   transition: ease 0.5s;
+  cursor: pointer;
 
   &:hover {
     transition: ease 0.5s;
@@ -103,7 +106,7 @@ const toPage = path => {
 .search {
   margin: auto 20px;
 
-  .search-icon{
+  .search-icon {
     color: #ff6c07;
   }
 }

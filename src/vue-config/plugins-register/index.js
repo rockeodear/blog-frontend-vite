@@ -8,6 +8,7 @@ import store from 'store'
 import router from 'router'
 
 import basic from 'mixins'
+
 /**
  * Vue注册插件
  * @param app {App}
