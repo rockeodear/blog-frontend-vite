@@ -1,0 +1,21 @@
+// 全局变量
+@import './variables.scss';
+
+//通用配置
+@import './normalize.scss';
+
+// ele样式覆盖
+@import './element-ui.scss';
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+* {
+  outline: none;
+}
+
+.flex-full-empty {
+  flex-grow: 1;
+}
