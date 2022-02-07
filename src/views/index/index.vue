@@ -1,9 +1,7 @@
 <template>
   <div class="index">
     <div class="main-container">
-      <!--      <div class="item" v-for="i in 5">{{ i }}</div>-->
-      <section class="wow flipInY" data-wow-duration="2s" data-wow-delay="5s">aaa</section>
-      <section class="wow flipInY" data-wow-offset="10" data-wow-iteration="10">bbb</section>
+            <h3 class="item" v-for="i in 100">{{ i }}</h3>
     </div>
     <div class="side-container wow slideInLeft">
       <h1 v-for="i in 5">{{ i }}</h1>
@@ -15,7 +13,7 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  new WOW().init();
+
 })
 </script>
 
