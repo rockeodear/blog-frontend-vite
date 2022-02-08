@@ -2,7 +2,7 @@
   <div class="basic-container">
     <!-- 顶部导航栏 -->
     <div :class="`basic-flex top ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
-      <component :is="TopMenu" />
+      <top-menu/>/
     </div>
     <!-- 主体内容 -->
     <div class="main-view expansion-flex">
@@ -12,7 +12,7 @@
     </div>
     <!-- 底部信息栏 -->
     <div class="basic-flex">
-      <component :is="FootColumn" />
+      <foot-column/>
     </div>
   </div>
 </template>
@@ -21,8 +21,6 @@
 import TopMenu from './top-menu/index.vue'
 import FootColumn from './foot-column/index.vue'
 import { ref } from 'vue'
-
-const bottomOffset = ref(0)
 
 const lastScroll = ref(0)
 
