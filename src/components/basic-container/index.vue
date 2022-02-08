@@ -1,7 +1,7 @@
 <template>
   <div class="basic-container">
     <!-- 顶部导航栏 -->
-    <div :class="`basic-flex ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
+    <div :class="`basic-flex top ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
       <component :is="TopMenu" />
     </div>
     <!-- 主体内容 -->
@@ -12,9 +12,7 @@
     </div>
     <!-- 底部信息栏 -->
     <div class="basic-flex">
-      <el-affix :offset="bottomOffset" position="bottom">
-        <component :is="FootColumn" />
-      </el-affix>
+      <component :is="FootColumn" />
     </div>
   </div>
 </template>
@@ -24,7 +22,6 @@ import TopMenu from './top-menu/index.vue'
 import FootColumn from './foot-column/index.vue'
 import { ref } from 'vue'
 
-const topOffset = ref(0)
 const bottomOffset = ref(0)
 
 const lastScroll = ref(0)
@@ -55,7 +52,7 @@ const scrollHandle = ({ scrollLeft, scrollTop }) => {
 
 <style lang="scss" scoped>
 .basic-container {
-  background-color: #f3f3c3;
+  background-color: #dcdbdb;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -76,11 +73,14 @@ const scrollHandle = ({ scrollLeft, scrollTop }) => {
   .expansion-flex {
     width: 100%;
     overflow-y: auto;
-    background-color: rgba(255, 154, 154, 0.1);
+
     flex: 1 1;
   }
 }
 
+.top {
+  box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0);
+}
 .foot-column {
 }
 </style>

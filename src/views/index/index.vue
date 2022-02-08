@@ -1,20 +1,29 @@
 <template>
   <div class="index">
     <div class="main-container">
-            <h3 class="item" v-for="i in 100">{{ i }}</h3>
+      <component :is="Banner" class="banner" />
+      <component :is="RecommendCategories" class="recommend-categories" />
+      <component :is="ArticleColumn" class="article-column" />
     </div>
     <div class="side-container wow slideInLeft">
-      <h1 v-for="i in 5">{{ i }}</h1>
+      <component :is='Profile' class='profile'/>
+      <component :is='Notice' class='profile'/>
+      <component :is='TimeCountdown' class='profile'/>
     </div>
   </div>
 </template>
 
-<script setup >
+<script setup>
+import Banner from './components/banner.vue'
+import RecommendCategories from './components/recommend-categories.vue'
+import ArticleColumn from './components/article-column.vue'
+import Profile from './components/profile.vue'
+import Notice from './components/notice.vue'
+import TimeCountdown from './components/time-countdown.vue'
+
 import { onMounted } from 'vue'
 
-onMounted(() => {
-
-})
+onMounted(() => {})
 </script>
 
 <style lang="scss" scoped>
