@@ -1,9 +1,9 @@
 <template>
   <div class="banner">
-    <el-carousel pause-on-hover height="40vh">
+    <el-carousel pause-on-hover height="45vh">
       <el-carousel-item v-for="banner in bannerList" :key="banner.articleId">
-        <img class="banner-image" :src="banner.url" alt="" />
-        <h4 class="banner-title">{{ banner.title }}</h4>
+        <div class="banner-title">{{ banner.title }}</div>
+        <div class="banner-image" :style="{ 'background-image': `url(${banner.url})` }"></div>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -37,15 +37,20 @@ const bannerList = ref([
 
   .banner-image {
     width: 100%;
-    height: 35vh;
+    height: 45vh;
     object-fit: cover;
-    z-index: 9998;
+    position: relative;
+    background-size: contain;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
   }
 
   .banner-title {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: -5vh;
-    display: inline-block;
     color: white;
     text-align: center;
     background-color: rgba(222, 222, 222, 0.5);

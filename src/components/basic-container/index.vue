@@ -2,7 +2,8 @@
   <div class="basic-container">
     <!-- 顶部导航栏 -->
     <div :class="`basic-flex top ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
-      <top-menu/>/
+      <top-menu />
+      /
     </div>
     <!-- 主体内容 -->
     <div class="main-view expansion-flex">
@@ -12,7 +13,7 @@
     </div>
     <!-- 底部信息栏 -->
     <div class="basic-flex">
-      <foot-column/>
+      <foot-column />
     </div>
   </div>
 </template>
