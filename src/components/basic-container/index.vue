@@ -3,7 +3,6 @@
     <!-- 顶部导航栏 -->
     <div :class="`basic-flex top ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
       <top-menu />
-      /
     </div>
     <!-- 主体内容 -->
     <div class="main-view expansion-flex">

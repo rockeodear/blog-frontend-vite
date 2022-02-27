@@ -25,8 +25,8 @@ const bannerList = ref([
   },
   {
     articleId: 3,
-    title: '高分计算机书籍PDF分享，Less is more~',
-    url: 'https://www.whywhy.vip/upload/2022/01/1642394881(1)-16b8ed3caa394b1bb80156b8d9abf764.jpg',
+    title: '化鲸 哈呼呼呼呼呼，Less is more~',
+    url: 'https://img0.baidu.com/it/u=1371216575,133393618&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281',
   },
 ])
 </script>

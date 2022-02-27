@@ -1,4 +1,13 @@
 .el-carousel__indicators--horizontal {
   bottom: 0 !important;
-  left: 90%;
+  left: 75%;
+}
+
+.el-tabs__active-bar {
+  background-color: #fb6c28;
+  height: 2px;
+}
+
+.el-divider--horizontal {
+  margin: 10px 0;
 }
