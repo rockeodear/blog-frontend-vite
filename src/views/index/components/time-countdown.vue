@@ -1,9 +1,10 @@
 <template>
   <div class="time-countdown side-item">
-    <div class="title">
+    <common-title label="时间沙漏" :level="1">
       <svg-icon name="time-flow" :size="24" />
+      <span>&nbsp;</span>
       <span>时间沙漏</span>
-    </div>
+    </common-title>
     <div class="content">
       <div class="flow-item" v-for="(item, index) in flowList" :key="item.preTitle">
         <div class="info">
@@ -29,6 +30,7 @@
 import { onMounted, ref } from 'vue'
 import { hourlyHandle } from 'utils/time'
 import dayjs from 'dayjs'
+import CommonTitle from 'components/common/title/index.vue'
 
 onMounted(() => {
   updateMessage()
