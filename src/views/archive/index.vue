@@ -25,24 +25,22 @@
       <span>时间轴</span>
       <p></p>
     </common-title>
-    <el-timeline>
-      <el-timeline-item center timestamp="2018/4/12" placement="top">
-        <el-card>
-          <h4>Update Github template</h4>
-          <p>Tom committed 2018/4/12 20:46</p>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/3" placement="top">
-        <el-card>
-          <h4>Update Github template</h4>
-          <p>Tom committed 2018/4/3 20:46</p>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item center timestamp="2018/4/2" placement="top">
-        Event start
-      </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/2" placement="top">
-        Event end
+    <el-timeline class="timeline">
+      <el-timeline-item v-for="line in dateLineList" :key="line.date" placement="top">
+        <el-collapse>
+          <el-collapse-item name="1">
+            <template #title>
+              <div class="line-title">
+                {{ line.date }}
+              </div>
+            </template>
+            <div class="article-list">
+              <div class="article-item" v-for="item in line.articleList">
+                <div class="single-text">{{ item.createAt }}:&nbsp;&nbsp;{{ item.title }}</div>
+              </div>
+            </div>
+          </el-collapse-item>
+        </el-collapse>
       </el-timeline-item>
     </el-timeline>
   </div>
@@ -100,6 +98,103 @@ const categoryList = ref([
     count: 57,
   },
 ])
+
+const dateLineList = ref([
+  {
+    id: 1,
+    date: '2022年1月',
+    articleList: [
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title:
+          '曝光一个很多人都不知道的学习网站。曝光一个很多人都不知道的学习网站曝光一个很多人都不知道的学习网站曝光一个很多人都不知道的学习网站曝光一个很多人都不知道的学习网站曝光一个很多人都不知道的学习网站',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: '2022年2月',
+    articleList: [
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+    ],
+  },
+  {
+    id: 3,
+    date: '2022年3月',
+    articleList: [
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+      {
+        articleId: 1,
+        createAt: '01-02',
+        title: '曝光一个很多人都不知道的学习网站。',
+      },
+    ],
+  },
+])
 </script>
 
 <style lang="scss" scoped>
@@ -115,7 +210,7 @@ const categoryList = ref([
     flex-wrap: wrap;
 
     .category-item {
-      background-color: #d7e1fd;
+      background-color: rgba(232, 240, 252, 0.8);
       margin: 15px 5px;
       padding: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
@@ -137,6 +232,59 @@ const categoryList = ref([
       }
       .category-count {
         color: #ff6c07;
+      }
+    }
+  }
+
+  .timeline {
+    font-size: 1.1rem;
+    margin: 40px 0 10px -35px;
+
+    ::v-deep .el-timeline-item__wrapper {
+      top: -25px;
+    }
+
+    ::v-deep .el-collapse-item__header {
+      background-color: rgba(232, 240, 252, 0.8);
+    }
+
+    ::v-deep .el-collapse-item__wrap {
+      background-color: #f8f8f8;
+    }
+
+    ::v-deep .el-collapse-item__content {
+      padding-bottom: 5px;
+      border-bottom: 1px none #f8f8f8;
+    }
+
+    ::v-deep .el-timeline-item {
+      padding-bottom: 5px;
+    }
+
+    .line-title {
+      padding: 0 10px;
+      width: 100%;
+      color: #ff6c07;
+      font-weight: 500;
+    }
+
+    .article-list {
+      background-color: #f8f8f8;
+      margin: 5px 10px 0 10px;
+
+      .article-item {
+        color: #8c939d;
+        line-height: 2;
+        margin: 10px 10px 0 10px;
+
+        &:hover {
+          color: #ff6c07;
+          cursor: pointer;
+        }
+
+        &:checked{
+          background-color: #ff6c07;
+        }
       }
     }
   }

@@ -27,10 +27,22 @@ a {
   white-space: nowrap;
 }
 
-
 .side-item {
   background-color: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   margin: 10px 5px;
+}
+
+// 被选中时背景颜色
+//::selection{background:#a7bd06;color:#FFF;}
+//::-moz-selection{background:#a7bd06;color:#FFF;}
+
+::selection {
+  background: #ff6c07;
+  color: #fff;
+}
+::-moz-selection {
+  background: #ff6c07;
+  color: #fff;
 }

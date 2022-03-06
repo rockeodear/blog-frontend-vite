@@ -30,7 +30,7 @@ import router from 'router'
 const _this = getCurrentInstance().proxy
 
 const avatarUrl = ref(
-  'https://www.whywhy.vip/upload/2021/09/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210917230812-25c6b5b9c4184a91ba64d1c2a783f553.jpg'
+  'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F014b855b82dc39a80120577d516a31.jpg%402o.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649169075&t=73a6ff157155eefc583736b1a6be573a'
 )
 
 const activeBar = ref('/index')

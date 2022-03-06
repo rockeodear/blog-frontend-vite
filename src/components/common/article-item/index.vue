@@ -9,11 +9,11 @@
     </div>
     <div class="info">
       <span>{{ article.insertAt }}</span>
-      <span>/</span>
+      <span> / </span>
       <span>{{ article.viewCount }}阅读</span>
-      <span>/</span>
+      <span> / </span>
       <span>{{ article.replyCount }}评论</span>
-      <span>/</span>
+      <span> / </span>
       <span>{{ article.likeCount }}点赞</span>
     </div>
   </div>

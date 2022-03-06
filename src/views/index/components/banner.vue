@@ -15,18 +15,18 @@ import { ref } from 'vue'
 const bannerList = ref([
   {
     articleId: 1,
-    title: '就这样，我走完了程序员的前五年...',
-    url: 'https://why-image-1300252878.cos.ap-chengdu.myqcloud.com/img/79/20210705122510.png',
+    title: '小小黑与小小白',
+    url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F14%2F20170314154648_LcSJs.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649169075&t=bbc6727ee20378cf71c0f86654554527',
   },
   {
     articleId: 2,
-    title: '历史文章大合集（实时更新）',
-    url: 'https://www.whywhy.vip/upload/2022/01/0-8c41f51ee62542608261b45e1aded702.png',
+    title: '气如赤焰纵酒狂歌《阴阳师》酒吞童子全新皮肤降临',
+    url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcms-bucket.nosdn.127.net%2F2018%2F07%2F17%2F59492f28052f4b659eb2cde8dc24a587.jpeg&refer=http%3A%2F%2Fcms-bucket.nosdn.127.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649169214&t=4c344ed28cd6bfbaa7fd2c03ba3f9ff9',
   },
   {
     articleId: 3,
-    title: '化鲸 哈呼呼呼呼呼，Less is more~',
-    url: 'https://img0.baidu.com/it/u=1371216575,133393618&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281',
+    title: '阴阳师新ssr不知火cg:和传说合二为一的歌姬',
+    url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Ffront%2F707%2Fw960h547%2F20190416%2FCUWK-hvsckth3613728.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649169270&t=ae7d6821221e22fca6017be606fead96',
   },
 ])
 </script>
