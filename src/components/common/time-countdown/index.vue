@@ -134,7 +134,7 @@ const calculateTouch = (total, yet) => {
 
           .inner_0 {
             background: #ffa9a9
-              linear-gradient(
+            linear-gradient(
                 135deg,
                 #ff4949 25%,
                 transparent 25%,
@@ -143,12 +143,12 @@ const calculateTouch = (total, yet) => {
                 #ff4949 75%,
                 transparent 75%,
                 transparent 100%
-              );
+            );
             background-size: 30px 30px;
           }
           .inner_1 {
             background: #bde6ff
-              linear-gradient(
+            linear-gradient(
                 135deg,
                 #50bfff 25%,
                 transparent 25%,
@@ -157,12 +157,12 @@ const calculateTouch = (total, yet) => {
                 #50bfff 75%,
                 transparent 75%,
                 transparent 100%
-              );
+            );
             background-size: 30px 30px;
           }
           .inner_2 {
             background: #ffd980
-              linear-gradient(
+            linear-gradient(
                 135deg,
                 #f7ba2a 25%,
                 transparent 25%,
@@ -171,12 +171,12 @@ const calculateTouch = (total, yet) => {
                 #f7ba2a 75%,
                 transparent 75%,
                 transparent 100%
-              );
+            );
             background-size: 30px 30px;
           }
           .inner_3 {
             background: #67c23a
-              linear-gradient(
+            linear-gradient(
                 135deg,
                 #4f9e28 25%,
                 transparent 25%,
@@ -185,7 +185,7 @@ const calculateTouch = (total, yet) => {
                 #4f9e28 75%,
                 transparent 75%,
                 transparent 100%
-              );
+            );
             background-size: 30px 30px;
           }
         }

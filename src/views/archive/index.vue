@@ -27,8 +27,8 @@
     </common-title>
     <el-timeline class="timeline">
       <el-timeline-item v-for="line in dateLineList" :key="line.date" placement="top">
-        <el-collapse>
-          <el-collapse-item name="1">
+        <el-collapse :model-value='line.date'>
+          <el-collapse-item :name="line.date">
             <template #title>
               <div class="line-title">
                 {{ line.date }}
@@ -94,6 +94,52 @@ const categoryList = ref([
   },
   {
     id: 9,
+    name: '荒腔走板',
+    count: 57,
+  },
+  {
+    id: 11,
+    name: 'Redis',
+    count: 5,
+  },
+  {
+    id: 12,
+    name: '算法',
+    count: 10,
+  },
+  {
+    id: 13,
+    name: '线程池',
+    count: 21,
+  },
+  {
+    id: 14,
+    name: 'JVM',
+    count: 13,
+  },
+  {
+    id: 15,
+    name: '源码分析',
+    count: 60,
+  },
+  {
+    id: 16,
+    name: 'Dubbo',
+    count: 28,
+  },
+
+  {
+    id: 17,
+    name: '思考感悟',
+    count: 61,
+  },
+  {
+    id: 18,
+    name: '八股文',
+    count: 53,
+  },
+  {
+    id: 19,
     name: '荒腔走板',
     count: 57,
   },
@@ -200,18 +246,19 @@ const dateLineList = ref([
 <style lang="scss" scoped>
 .archive {
   padding: 10px 15px;
-  margin: 20px auto;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
 
   .category-list {
+    margin: 10px 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
     .category-item {
       background-color: rgba(232, 240, 252, 0.8);
-      margin: 15px 5px;
+      margin: 5px;
       padding: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
       border-radius: 6px;
@@ -291,13 +338,13 @@ const dateLineList = ref([
 }
 
 // 大于1200时生效
-@media screen and (min-width: 1290px) {
+@media screen and (min-width: 1198px) {
   .archive {
-    width: 1320px;
+    width: 77.5%;
   }
 }
 
-@media screen and (max-width: 1290px) {
+@media screen and (max-width: 1198px) {
   .archive {
     width: 98%;
   }

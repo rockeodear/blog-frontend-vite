@@ -6,13 +6,39 @@ const basic = [
     redirect: '/index',
     children: [
       {
-        path: '/index',
+        path: '/home',
         name: 'home',
-        component: () => import('views/index/index.vue'),
-        meta: {
-          title: '首页',
-          keepAlive: false,
-        },
+        component: () => import('components/common/home/index.vue'),
+        redirect: '/index',
+        children: [
+          {
+            path: '/index',
+            name: 'index',
+            component: () => import('views/index/index.vue'),
+            meta: {
+              title: '首页',
+              keepAlive: false,
+            },
+          },
+          {
+            path: '/categories',
+            name: 'categories',
+            component: () => import('views/categories/index.vue'),
+            meta: {
+              title: '文章分类',
+              keepAlive: false,
+            },
+          },
+          {
+            path: '/journals',
+            name: 'journals',
+            component: () => import('views/journals/index.vue'),
+            meta: {
+              title: '荒唐走板',
+              keepAlive: false,
+            },
+          },
+        ],
       },
       {
         path: '/archive',
@@ -29,24 +55,6 @@ const basic = [
         component: () => import('views/article/view/index.vue'),
         meta: {
           title: '文章阅读',
-          keepAlive: false,
-        },
-      },
-      {
-        path: '/categories',
-        name: 'categories',
-        component: () => import('views/categories/index.vue'),
-        meta: {
-          title: '文章分类',
-          keepAlive: false,
-        },
-      },
-      {
-        path: '/journals',
-        name: 'journals',
-        component: () => import('views/journals/index.vue'),
-        meta: {
-          title: '荒唐走板',
           keepAlive: false,
         },
       },

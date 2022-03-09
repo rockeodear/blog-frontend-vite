@@ -1,10 +1,16 @@
 <template>
-  <div class="recommend-categories">
-    <div class="categories-item" v-for="item in categoriesList" :key="item.id + '-categories'">
-      <div class="category-image" :style="{ 'background-image': `url(${item.cover})` }">
-        <div class="category-temperature">{{ item.temperature }}℃</div>
-        <div class="category-name">
-          <div>{{ item.name }}</div>
+  <div>
+    <div class="title">
+      精品分类
+    </div>
+    <el-divider></el-divider>
+    <div class="recommend-categories">
+      <div class="categories-item" v-for="item in categoriesList" :key="item.id + '-categories'">
+        <div class="category-image" :style="{ 'background-image': `url(${item.cover})` }">
+          <div class="category-temperature">{{ item.temperature }}℃</div>
+          <div class="category-name">
+            <div>{{ item.name }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -48,6 +54,12 @@ const getStyle = uri => {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  font-size: 0.9rem;
+  color: #ff6c07;
+  padding-left: 0.8rem;
+}
+
 .recommend-categories {
   width: 100%;
   padding: 10px;
@@ -113,5 +125,9 @@ const getStyle = uri => {
       width: 100%;
     }
   }
+}
+
+::v-deep .el-divider--horizontal {
+  margin: 10px 0 5px 0;
 }
 </style>
