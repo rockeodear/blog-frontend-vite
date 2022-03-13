@@ -2,7 +2,7 @@
   <div class="article-column">
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane v-for="tab in tabList" :key="tab.value" :label="tab.label" :name="tab.value">
-        <article-list show-tag :list="articleList" />
+        <article-list show-tag :list="articleList" @page-add="handleFetch" />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -51,7 +51,7 @@ const articleList = ref([
     insertAt: '2022-01-01',
   },
   {
-    id: 1,
+    id: 2,
     title: '一个Demo文章例子，不可以点的哦...',
     cover: '',
     profile: '嘿嘿嘿嘿嘿嘿',
@@ -62,7 +62,7 @@ const articleList = ref([
     insertAt: '2022-01-01',
   },
   {
-    id: 1,
+    id: 3,
     title: '一个Demo文章例子，不可以点的哦...',
     cover: '',
     profile: '嘿嘿嘿嘿嘿嘿',
@@ -73,7 +73,7 @@ const articleList = ref([
     insertAt: '2022-01-01',
   },
   {
-    id: 1,
+    id: 4,
     title: '一个Demo文章例子，不可以点的哦...',
     cover: '',
     profile: '嘿嘿嘿嘿嘿嘿',
@@ -84,7 +84,7 @@ const articleList = ref([
     insertAt: '2022-01-01',
   },
   {
-    id: 1,
+    id: 5,
     title: '一个Demo文章例子，不可以点的哦...',
     cover: '',
     profile: '嘿嘿嘿嘿嘿嘿',
@@ -95,6 +95,26 @@ const articleList = ref([
     insertAt: '2022-01-01',
   },
 ])
+
+const handleFetch = () => {
+  let temp = []
+  let len = articleList.value.length
+  for (let i = len; i < len + 10; i++) {
+    temp.push({
+      id: i,
+      title: '一个Demo文章例子，不可以点的哦...',
+      cover: '',
+      profile: '嘿嘿嘿嘿嘿嘿',
+      onTop: true,
+      likeCount: 100,
+      replyCount: 20,
+      viewCount: 895,
+      insertAt: '2022-01-01',
+    })
+  }
+
+  articleList.value.push(...temp)
+}
 </script>
 
 <style lang="scss" scoped>

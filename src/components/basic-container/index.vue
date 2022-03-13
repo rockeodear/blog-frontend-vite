@@ -1,51 +1,45 @@
 <template>
   <div class="basic-container">
-    <!-- 顶部导航栏 -->
-    <div :class="`basic-flex top ${showTopBar && diffCount >= 10 ? '' : 'basic-flex-hidden'}`">
-      <top-menu />
-    </div>
-    <!-- 主体内容 -->
-    <div class="main-view expansion-flex">
-      <el-scrollbar ref="scrollbar" noresize @scroll="scrollHandle">
+    <el-scrollbar ref="scrollbar" class="scrollbar" noresize @scroll="debounceScroll">
+      <!-- 顶部导航栏 -->
+      <div class="basic-flex top" :class="clazz">
+        <top-menu />
+      </div>
+      <!-- 主体内容 -->
+      <div class="main-view expansion-flex" ref="mainView">
         <router-view></router-view>
-      </el-scrollbar>
-    </div>
-    <!-- 底部信息栏 -->
-    <div class="basic-flex">
-      <foot-column />
-    </div>
+      </div>
+      <!-- 底部信息栏 -->
+      <div class="basic-flex">
+        <foot-column />
+      </div>
+    </el-scrollbar>
   </div>
 </template>
 
 <script setup>
 import TopMenu from './top-menu/index.vue'
 import FootColumn from './foot-column/index.vue'
-import { ref } from 'vue'
+import { debounce } from 'utils'
+import { computed, ref } from 'vue'
 
 const lastScroll = ref(0)
+const touchTop = ref(true)
+const moveDown = ref(false)
 
-const showTopBar = ref(true)
-
-const lastShowTopBar = ref(true)
-
-const diffCount = ref(10)
-
-const scrollHandle = ({ scrollLeft, scrollTop }) => {
-  let curScroll = scrollTop
-  const diff = curScroll - lastScroll.value
-  const leaveTop = scrollTop > 20
-  const isDowner = diff > 1
-  // 到达顶部或向上滑时显示顶部，否则隐藏顶部
-  showTopBar.value = !(leaveTop && isDowner)
-  if (lastShowTopBar.value === showTopBar.value) {
-    diffCount.value++
-  } else {
-    lastShowTopBar.value = showTopBar.value
-    diffCount.value = 0
+const clazz = computed(() => {
+  let hiddenTopBar = !touchTop.value && moveDown.value
+  return {
+    'top-hidden': hiddenTopBar,
   }
-  diffCount.value++
-  lastScroll.value = curScroll
+})
+
+const scrollHandle = ({ scrollTop }) => {
+  moveDown.value = scrollTop > lastScroll.value
+  touchTop.value = scrollTop < 50
+  lastScroll.value = scrollTop
 }
+const debounceScroll = debounce(scrollHandle, 20, false)
 </script>
 
 <style lang="scss" scoped>
@@ -58,27 +52,40 @@ const scrollHandle = ({ scrollLeft, scrollTop }) => {
   align-items: center;
 
   .basic-flex {
-    transition: ease 0.5s;
+    transition: ease 0.35s;
     width: 100%;
     flex: 0 0;
   }
 
-  .basic-flex-hidden {
-    margin-top: -50px;
-    transition: ease 0.5s;
-  }
-
   .expansion-flex {
     width: 100%;
-    overflow-y: auto;
+    //overflow-y: auto;
 
     flex: 1 1;
+  }
+
+  .scrollbar {
+    width: 100%;
   }
 }
 
 .top {
+  top: 0;
+  z-index: 99;
+  position: fixed;
   box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0);
 }
+.top-hidden {
+  transition: ease 0.35s;
+  transform: translate(0, -50px);
+}
+.main-view {
+  position: relative;
+  min-height: calc(100vh - 90px);
+  top: 50px;
+}
 .foot-column {
+  position: relative;
+  top: 50px;
 }
 </style>

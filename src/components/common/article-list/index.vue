@@ -1,7 +1,7 @@
 <template>
   <div class="article-list">
     <div v-for="item in list" :key="item.id" class="item">
-      <article-item :article="item" :show-tag="showTag" />
+      <article-item :article="item" :show-tag="showTag" @click="toArticlePage(item)" />
       <el-divider></el-divider>
     </div>
     <div class="bottom-tip">
@@ -15,6 +15,9 @@
 <script setup>
 import ArticleItem from 'components/common/article-item/index.vue'
 import { computed, ref } from 'vue'
+import router from 'router'
+const emit = defineEmits(['page-add'])
+
 const page = ref({
   pageNum: 1,
   pageSize: 20,
@@ -45,6 +48,7 @@ const loadMore = () => {
     loading.value = true
     setTimeout(() => {
       loading.value = false
+      emit('page-add')
     }, 1000)
     page.value.pageNum += 1
   } else {
@@ -52,6 +56,16 @@ const loadMore = () => {
   }
 
   console.log(page.value.pageNum)
+}
+
+const toArticlePage = ({ id }) => {
+  const { href } = router.resolve({
+    name: 'article-viewer',
+    params: {
+      articleId: id,
+    },
+  })
+  window.open(href)
 }
 </script>
 

@@ -42,7 +42,7 @@
 import { ref } from 'vue'
 
 const info = ref({
-  avatar: 'https://img2.baidu.com/it/u=775986545,983273084&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=419',
+  avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202004%2F27%2F20200427000107_hiebd.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1649649936&t=bd11cb149cd14751a0408c895bb7ee5c',
   nickname: 'rocke',
   signature: '一个平平无奇的码农,一个平平无奇的码农，一个平平无奇的码农，一个平平无奇的码农，一个平平无奇的码农',
   cardImage: 'https://www.whywhy.vip/upload/2022/01/bg-de181afe5bf446c2b00fba7bf19f4909.jpg',

@@ -10,6 +10,4 @@ const router = createRouter({
 // 路由守卫
 registerRouterGuards(router)
 
-console.log(router.getRoutes())
-
 export default router

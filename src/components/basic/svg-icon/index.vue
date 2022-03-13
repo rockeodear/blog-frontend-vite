@@ -25,7 +25,7 @@ const props = defineProps({
 const realSize = computed(() => props.size + 'px')
 const iconName = computed(() => `#icon-${props.name}`)
 const svgClass = computed(() => {
-  console.log(props.name, 'props.name')
+  console.log('props.name-register', props.name)
   if (props.name) {
     return `svg-icon icon-${props.name}`
   }

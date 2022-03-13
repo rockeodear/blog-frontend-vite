@@ -27,7 +27,7 @@
     </common-title>
     <el-timeline class="timeline">
       <el-timeline-item v-for="line in dateLineList" :key="line.date" placement="top">
-        <el-collapse :model-value='line.date'>
+        <el-collapse :model-value="line.date">
           <el-collapse-item :name="line.date">
             <template #title>
               <div class="line-title">
@@ -35,7 +35,7 @@
               </div>
             </template>
             <div class="article-list">
-              <div class="article-item" v-for="item in line.articleList">
+              <div class="article-item" v-for="item in line.articleList" @click="toArticlePage(item)">
                 <div class="single-text">{{ item.createAt }}:&nbsp;&nbsp;{{ item.title }}</div>
               </div>
             </div>
@@ -49,6 +49,7 @@
 <script setup>
 import CommonTitle from 'components/common/title/index.vue'
 import { ref } from 'vue'
+import router from 'router'
 
 const categoryList = ref([
   {
@@ -241,6 +242,16 @@ const dateLineList = ref([
     ],
   },
 ])
+
+const toArticlePage = ({ articleId }) => {
+  const { href } = router.resolve({
+    name: 'article-viewer',
+    params: {
+      articleId,
+    },
+  })
+  window.open(href)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -249,6 +260,7 @@ const dateLineList = ref([
   margin: 10px auto;
   display: flex;
   flex-direction: column;
+  border: 1px solid transparent;
 
   .category-list {
     margin: 10px 5px;
@@ -329,7 +341,7 @@ const dateLineList = ref([
           cursor: pointer;
         }
 
-        &:checked{
+        &:checked {
           background-color: #ff6c07;
         }
       }
