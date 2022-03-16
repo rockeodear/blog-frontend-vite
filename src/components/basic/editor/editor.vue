@@ -25,8 +25,6 @@ const editor = ref(null)
 const instance = getCurrentInstance()
 
 onMounted(() => {
-  console.log(instance)
-  debugger
   editor.value = new bytemd.Editor({
     target: instance.proxy.$el,
     props,
