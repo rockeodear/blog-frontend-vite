@@ -4,15 +4,25 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "svgo": "svgo -f src/icons --config=src/icons/svgo.yml"
   },
   "dependencies": {
+    "@bytemd/plugin-breaks": "^1.11.0",
+    "@bytemd/plugin-footnotes": "^1.11.0",
+    "@bytemd/plugin-frontmatter": "^1.11.0",
+    "@bytemd/plugin-gemoji": "^1.11.0",
+    "@bytemd/plugin-gfm": "^1.11.0",
+    "@bytemd/plugin-highlight": "^1.11.0",
+    "@bytemd/plugin-medium-zoom": "^1.11.0",
     "@element-plus/icons-vue": "0.2.6",
     "animate.css": "4.1.1",
     "axios": "0.25.0",
+    "bytemd": "^1.11.0",
     "dayjs": "1.10.7",
     "element-plus": "1.3.0-beta.10",
     "js-cookie": "3.0.1",
+    "juejin-markdown-themes": "^1.29.1",
     "pinia": "2.0.11",
     "pinia-plugin-persist": "0.0.93",
     "qs": "6.10.3",
@@ -22,9 +32,22 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "2.1.0",
     "@vue/compiler-sfc": "3.2.29",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.12",
     "sass": "1.49.7",
     "svg-sprite-loader": "^6.0.11",
+    "svgo": "^1.3.2",
     "vite": "2.7.13",
     "wow.js": "1.2.2"
-  }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "license": "MIT"
 }
