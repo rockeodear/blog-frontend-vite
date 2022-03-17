@@ -61,7 +61,7 @@ const basic = [
     ],
   },
   {
-    path: '/article-editor',
+    path: '/editor',
     name: 'article-editor',
     component: () => import('views/article/edit/index.vue'),
     meta: {

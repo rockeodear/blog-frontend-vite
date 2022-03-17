@@ -1,2 +1,2 @@
-export { default as Editor } from './editor.vue'
-export { default as Viewer } from './viewer.vue'
+export { default as Editor } from './Editor.vue'
+export { default as Viewer } from './Viewer.vue'
